@@ -4,13 +4,12 @@ using namespace std;
 #include "Menu.h"
 #include "MenuMgr.h"
 #include "MenuType.h"
-
+#include"inputMgr.h"
 int Menu::selectMenuItem() {
 	int choice = 0;
 	cin >> choice;
 	return choice;
 }
-
 void MainMenu::display() const {
 	system("cls");
 	cout << "\n\t	主菜单\n\n";
@@ -73,6 +72,14 @@ bool VendorMenu::doChoice(int choice) {
 	switch (choice) {
 	case 1:
 		// 待实现
+		while (1)
+		{
+			if (input.isEscPressed())
+			{
+				MenuMgr::getInstance().setCurrentMenu(MenuType::VENDOR_MENU);
+				break;
+			}
+		}
 		break;
 	case 2:
 		// 待实现

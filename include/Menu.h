@@ -1,6 +1,6 @@
 // Menu.h
 #pragma once
-
+#include"inputMgr.h"
 // ³éÏó²Ëµ¥
 class Menu {
 public:
@@ -10,6 +10,7 @@ public:
 		int choice = selectMenuItem();
 		return doChoice(choice);
 	}
+	inputMgr input;
 protected:
 	virtual void display() const = 0;
 	virtual int  selectMenuItem();
